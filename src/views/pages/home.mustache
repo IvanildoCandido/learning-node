@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal</title>
+  </head>
+  <body>
+    {{>partials/header}}
+    <h1>Olá tudo bom? Seja bem-vindo {{ name }}!</h1>
+    <ul>
+      {{#show}}
+      {{#languages}}
+      {{>partials/langItem}}
+      {{/languages}}
+      {{/show}}
+    </ul>
+    <ul>
+      {{#emptyList}}
+      <li>{{.}}</li>
+      {{/emptyList}}
+      {{^emptyList}}
+      <p>Não há itens na lista!</p>
+      {{/emptyList}}
+    </ul>
+  </body>
+</html>
