@@ -1,14 +1,8 @@
 import { Router, Request, Response } from 'express';
+import * as homeController from '../controllers/homeController';
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.render('pages/home', {
-    name: 'Ivanildo',
-    languages: ['node', 'php', 'react', 'java'],
-    emptyList: ['Item 1', ' Item 2'],
-    show: true,
-  });
-});
+router.get('/', homeController.home);
 
 export default router;
